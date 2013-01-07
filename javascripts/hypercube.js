@@ -19,6 +19,8 @@ $(document).ready(function(){
     var a = 0, b = 0;
     var x = 0, y = 0, z = 0;
 
+    var zIndexBase = 10; // base zIndex to calculate from. Not a minimum!
+
     var vertSpacing  = 50;
     var vertSize = getVertSize();
 
@@ -95,6 +97,7 @@ $(document).ready(function(){
                         top  = vCenter + v * (w + 2) * vertSpacing;
                         color = 'rgb(0, ' + c + ', 0)';
                         fontSize = (w + 2) * vertSize + "px";
+                        zIndex = zIndexBase + Math.floor( w * 2 );
                     }
                     vertIndex++;
                 }
